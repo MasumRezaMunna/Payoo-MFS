@@ -14,25 +14,40 @@ function getInputValue (id){
     return inputFieldValue
 }
 
+// function to get innerText
+function getInnerText (id){
+    const element = document.getElementById(id)
+    const elementValue = element.innerText
+    const elementValueNumber = parseInt(elementValue)
+    return elementValueNumber
+}
+
+// function to set innerText
+
+function setInnerText(value){
+    const availableBalanceElement = document.getElementById("available-balance")
+    availableBalanceElement.innerText = value
+}
+
 // add money feature
 
 document.getElementById("add-money-btn").addEventListener("click", function(e){
     e.preventDefault()
-    const bank = getElementById("bank")
+    const bank = getInputValue("bank")
     const accountNumber = document.getElementById("account-number").value
 
     const amount = getInputValueNumber("add-amount")
 
     const pin = getInputValueNumber("add-pin")
 
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText)
+    const availableBalance = getInnerText("available-balance")
 
     if(accountNumber.length < 11){
         alert("please provide valid account number")
         return;
     }
 
-    if(pin !== validPin.toString()){
+    if(pin !== validPin){
         alert("please provide valid pin number")
         return;
     }
@@ -40,23 +55,24 @@ document.getElementById("add-money-btn").addEventListener("click", function(e){
 
     const totalNewAvailableBalance = amount + availableBalance
 
-    document.getElementById("available-balance").innerText = totalNewAvailableBalance
+
+    setInnerText(totalNewAvailableBalance)
 
     
 })
 
-// cashout money feature
+// cash out money feature
 
 document.getElementById("withdraw-btn").addEventListener("click", function(e){
     e.preventDefault()
 
     const amount = getInputValueNumber("withdraw-amount")
 
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText)
+    const availableBalance = getInnerText("available-balance")
 
     const totalNewAvailableBalance = availableBalance - amount
     
-    document.getElementById("available-balance").innerText = totalNewAvailableBalance
+setInnerText(totalNewAvailableBalance)
 })
 
 
