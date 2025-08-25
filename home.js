@@ -39,6 +39,22 @@ function handleToggle(id){
     document.getElementById(id).style.display = "block"
 }
 
+// function to toggle buttons
+
+function handleToggle(id){
+    const formBtns = document.getElementsByClassName("form-btn")
+
+    for(const btn of formBtns){
+        btn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
+        btn.classList.add("border-gray-300")
+    }
+
+    document.getElementById(id).classList.remove("border-gray-300")
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]")
+    
+}
+
+
 // add money feature
 
 document.getElementById("add-money-btn").addEventListener("click", function(e){
@@ -95,6 +111,23 @@ setInnerText(totalNewAvailableBalance)
 document.getElementById("add-button").addEventListener("click", function(){
 
     handleToggle("add-money-parent")
+    handleToggle("add-button")
+
+
+
+    // const formBtns = document.getElementsByClassName("form-btn")
+
+    // for(const btn of formBtns){
+    //     btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+    //     btn.classList.add("border-gray-300")
+    // }
+
+    // document.getElementById("add-button").classList.remove("border-gray-300")
+    // document.getElementById("add-button").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+
+
+
+
     // const forms = document.getElementsByClassName("form")
 
     // for(const form of forms){
@@ -116,6 +149,18 @@ document.getElementById("cashout-button").addEventListener("click", function(){
 
     // document.getElementById("cash-out-parent").style.display = "block"
     handleToggle("cash-out-parent")
+    handleToggle("cashout-button")
+
+
+    //  const formBtns = document.getElementsByClassName("form-btn")
+
+    // for(const btn of formBtns){
+    //     btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+    //     btn.classList.add("border-gray-300")
+    // }
+
+    // document.getElementById("cashout-button").classList.remove("border-gray-300")
+    // document.getElementById("cashout-button").classList.add("border-[#0874f2]","bg-[#0874f20d]")
 
     // document.getElementById("cash-out-parent").style.display = "block"
     // document.getElementById("add-money-parent").style.display = "none"
@@ -123,6 +168,20 @@ document.getElementById("cashout-button").addEventListener("click", function(){
 })
 document.getElementById("transfer-button").addEventListener("click", function(){
     handleToggle("transfer-money-parent")
+    handleToggle("transfer-button")
+
+
+    //  const formBtns = document.getElementsByClassName("form-btn")
+
+    // for(const btn of formBtns){
+    //     btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+    //     btn.classList.add("border-gray-300")
+    // }
+
+    // document.getElementById("transfer-button").classList.remove("border-gray-300")
+    // document.getElementById("transfer-button").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+
+
     // const forms = document.getElementsByClassName("form")
 
     // for(const form of forms){
@@ -137,6 +196,19 @@ document.getElementById("transfer-button").addEventListener("click", function(){
 })
 document.getElementById("bonus-button").addEventListener("click", function(){
     handleToggle("get-bonus-parent")
+    handleToggle("bonus-button")
+
+    // const formBtns = document.getElementsByClassName("form-btn")
+
+    // for(const btn of formBtns){
+    //     btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+    //     btn.classList.add("border-gray-300")
+    // }
+
+    // document.getElementById("bonus-button").classList.remove("border-gray-300")
+    // document.getElementById("bonus-button").classList.add("border-[#0874f2]","bg-[#0874f20d]")
+
+
     // const forms = document.getElementsByClassName("form")
 
     // for(const form of forms){
